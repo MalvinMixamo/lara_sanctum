@@ -53,7 +53,17 @@ class authController extends Controller
         ], 200);
     }
 
-    public function logout(){
-        
+    public function logout(Request $request){
+        if ($request->user() && $request->user()->currentAccessToken()) {
+            $request->user()->currentAccessToken()->delete();
+
+            return response()->json([
+                'message' => 'Berhasil logout'
+            ], 200);
+        }
+
+        return response()->json([
+            'message' => 'Token tidak valid atau user tidak ditemukan'
+        ], 401);
     }
 }
