@@ -53,6 +53,12 @@ class authController extends Controller
         ], 200);
     }
 
+    public function user(Request $request){
+        return response()->json([
+            'user'=>$request->user()
+        ], 200);
+    }
+
     public function logout(Request $request){
         if ($request->user() && $request->user()->currentAccessToken()) {
             $request->user()->currentAccessToken()->delete();

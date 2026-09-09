@@ -12,7 +12,7 @@ export default function Profile(){
             console.error('Logout error: ', err)
         }finally{
             localStorage.removeItem('token')
-            navigate('login')
+            navigate('/login')
         }
     }
     return (
