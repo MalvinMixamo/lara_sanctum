@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import api from "./axios";
+import dashboard from "../../../public/Screenshot 2026-09-09 182134.png"
 
 export default function Profile(){
     const navigate = useNavigate();
@@ -15,8 +16,10 @@ export default function Profile(){
         }
     }
     return (
-        <div>
-            <h1>Hello World</h1>
+        <div className="w-full">
+            <div className="w-full">
+                <img className="h-screen" src={dashboard} alt="" />
+            </div>
             <button onClick={handleLogout}>Logout</button>
         </div>
     )
