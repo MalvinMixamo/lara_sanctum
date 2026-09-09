@@ -51,6 +51,7 @@ export default function login() {
                     onChange={(e) => setPassword(e.target.value)} 
                     className=" focus:bg-[#aee1e7] focus:outline-none px-2 py-1 border border-slate-200 rounded-md"
                     />
+                <p>Belum punya akun? <a href="/register" className="text-slate-600 font-medium">Daftar</a></p>
                 </div>
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                 <input type="submit" value="Submit" className="bg-slate-200 py-3 rounded-md font-bold text-slate-700 cursor-pointer hover:bg-slate-500 transition-all duration-500 gentle"/>
