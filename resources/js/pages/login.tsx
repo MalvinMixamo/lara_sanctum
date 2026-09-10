@@ -17,7 +17,7 @@ export default function login() {
         try{
             const response = await api.post('login', { email, password })
             localStorage.setItem('token', response.data.access_token)
-            navigate('/profile')
+            navigate('/user')
         }catch (err: any){
             if (err.response) {
                 setErrorMessage(err.response.data.message || 'Login gagal');
